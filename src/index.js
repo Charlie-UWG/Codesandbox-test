@@ -1,24 +1,33 @@
 /**
- * 変数 const let
+ * const let などの変数宣言
  */
-// let val1 = "変数１です";
-// console.log(val1);
+var val1 = "var変数";
+console.log(val1);
+// var変数は上書き可能
+val1 = "var変数を上書き";
+console.log(val1);
+// var変数は再宣言可能
+var val1 = "var変数を再宣言";
+console.log(val1);
 
-// val1 = "変数1は変更できます";
+// let val2 = "let変数";
 // console.log(val1);
-
-// const val2 = "変数２";
+// let変数は上書き可能
+// val2 = "let変数を上書き";
 // console.log(val2);
 
+// const val3 = "const変数";
+// console.log(val3);
+
 // // オブジェクトのプロパティは変更可能
-// const val3 = {
+// const val4 = {
 //   name: "charlie",
 //   age: 58
 // };
 
-// val3.name = "Charlie";
+// val4.name = "Charlie";
 
-// console.log(val3);
+// console.log(val4);
 
 // /**
 //  * テンプレート文字列
@@ -85,7 +94,7 @@
  * mapやfilterを使った配列の処理
  */
 
-const nameArr = ["田中", "山田", "ちゃーりー"];
+// const nameArr = ["田中", "山田", "ちゃーりー"];
 //  for (let index = 0; index < nameArr.length; index ++) {
 //   // console.log(nameArr[index]);
 //   console.log(`${index + 1}番目は${nameArr[index]}です。`);
@@ -96,7 +105,7 @@ const nameArr = ["田中", "山田", "ちゃーりー"];
 //  })
 //  console.log(nameArr2);
 
-nameArr.map((name, index) => console.log(`${index + 1}番目は${name}です。`));
+// nameArr.map((name, index) => console.log(`${index + 1}番目は${name}です。`));
 
 // //filter example 配列に対してある条件に一致したものだけ取り出す
 // const numArr = [1,2,3,4,5];
@@ -105,11 +114,44 @@ nameArr.map((name, index) => console.log(`${index + 1}番目は${name}です。`
 // });
 // console.log(newNumArr);
 
-const newNameArr = nameArr.map((name) => {
-  if (name === "ちゃーりー") {
-    return name;
-  } else {
-    return `${name}さん`;
-  }
-});
-console.log(newNameArr);
+// const newNameArr = nameArr.map((name) => {
+//   if (name === "ちゃーりー") {
+//     return name;
+//   } else {
+//     return `${name}さん`;
+//   }
+// });
+// console.log(newNameArr);
+
+/**
+ * 三項演算子
+ */
+//ある条件？条件がtrueの時：条件がfalseの時
+// const val1 = 1 <0 'trueです' : 'falseです';
+// console.log(val1);
+
+// const num = "1300";
+// // console.log(num.toLocaleString());
+
+// const formattedNum = typeof num === 'number' ? num.toLocaleString() : "数値を入力してください";
+// console.log(formattedNum);
+
+// const checkSum = (num1, num2) => {
+//   return num1 + num2 > 100 ? '範囲を超えています' : '許容範囲です';
+// }
+// console.log(checkSum(50,40));
+
+/**
+ * 論理演算子のほんとうの意味を知ろう　&& ||
+ */
+//
+
+// ||は左側がfalseとなる時ならば右を返す
+const num = null;
+const fee = num || "金額未設定です";
+console.log(fee);
+
+// &&は左側がtrueなら右側を返す
+const num2 = 100;
+const fee2 = num2 && "なにか設定されました";
+console.log(fee2);
